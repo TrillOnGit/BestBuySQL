@@ -7,7 +7,8 @@ JOIN categories c ON p.CategoryID = c.CategoryID;
 /* joins: find all product names, product prices, and products ratings that have a rating of 5 */
  
 SELECT p.Name, p.Price, r.Rating FROM products p
-JOIN reviews r ON p.ProductID = r.ProductID;
+JOIN reviews r ON p.ProductID = r.ProductID
+WHERE r.Rating = 5;
 
 /* joins: find the employee with the most total quantity sold.  use the sum() function and group by */
 
