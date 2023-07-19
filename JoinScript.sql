@@ -27,7 +27,7 @@ WHERE c.Name = "Games" OR c.Name = 'Appliances';
 /* joins: find the product name, total # sold, and total price sold,
  for Eagles: Hotel California --You may need to use SUM() */
 
-SELECT p.Name, SUM(s.Quantity), SUM(s.PricePerUnit) FROM products p 
+SELECT p.Name, SUM(s.Quantity) as "Total Units Sold", SUM(s.PricePerUnit) as "Total Value" FROM products p 
 JOIN sales s ON p.ProductID = s.ProductID 
 WHERE p.Name LIKE "Eagles: Hotel%"
 GROUP BY p.Name;
